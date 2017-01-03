@@ -142,9 +142,9 @@ angular.module('auction')
     }
     // characters 100 true
     function prepare_title_ending_data(auction, lang) {
-      var ending = auction.tenderID + " - " + $filter('characters')((auction['title_' + lang] || auction['title'] || auction['title_en'] || auction['title_ru'] || ""), 50, true);
+      var ending = auction.tenderID + " - " + $filter('characters')((auction['title_' + lang] || auction['title'] || auction['title_en'] || auction['title_ru'] || auction['title_uk'] || ""), 50, true);
       ending += " - ";
-      ending += $filter('characters')(auction.procuringEntity['name_' + lang] || auction.procuringEntity['name'] || auction.procuringEntity['name_en'] || auction.procuringEntity['name_ru'] || "", 50, true);
+      ending += $filter('characters')(auction.procuringEntity['name_' + lang] || auction.procuringEntity['name'] || auction.procuringEntity['name_en'] || auction.procuringEntity['name_ru'] || auction.procuringEntity['name_uk'] || "", 50, true);
       return ending;
     }
     // Get bidder_id from query
